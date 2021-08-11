@@ -4,13 +4,25 @@
   
     
     <entry>
-      <title>我的第一篇博客</title>
-      <link href="/2021/08/10/my-firet-blog/"/>
-      <url>/2021/08/10/my-firet-blog/</url>
+      <title>hello world</title>
+      <link href="/2021/08/11/hello-world/"/>
+      <url>/2021/08/11/hello-world/</url>
       
-        <content type="html"><![CDATA[<h2 id="古朗月行"><a href="#古朗月行" class="headerlink" title="     古朗月行"></a><center>     <strong>古朗月行</strong></center></h2><p>​           <em>唐-李白</em></p><p><strong>小时不识月，呼作白玉盘。</strong></p><p><strong>又疑瑶台镜，飞在青云端。</strong></p><p><strong>仙人垂两足，桂树何团团。</strong></p><p><strong>白兔捣药成，问言与谁餐？</strong></p><p><img src="C:\Users\王海洋\Desktop\a6efce1b9d16fdfa3c88acc119517c5c95ee7b24.jpeg"></p>]]></content>
+        <content type="html"><![CDATA[<center>大家好，这是我的第一篇博客，欢迎访问，后期会更新很多文章！</center><p><img src="2.jpg"></p><p>晚安！</p>]]></content>
       
       
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
       
     </entry>
     
