@@ -597,10 +597,10 @@ header .go-back i {
 
     0%,
     100% {
-        background: rgba(156, 39, 176, 0.75);
-        background: linear-gradient(45deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
-        background: -moz-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
+        background: rgba(10, 158, 97, 0.65);
+        background: linear-gradient(45deg, rgba(83, 206, 175, 0.75) 0%, rgba(10, 158, 97, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(83, 206, 175, 0.75) 0%, rgba(10, 158, 97, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(83, 206, 175, 0.75) 0%, rgba(10, 158, 97, 0.65) 100%);
     }
 
     16% {
@@ -1903,7 +1903,7 @@ footer .copy-right {
 }
 
 .top-scroll .btn-floating {
-    background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%);
+    background: linear-gradient(to bottom right, #d8d6d6 0%, #4b4a4a 100%);
     width: 48px;
     height: 48px;
 }
