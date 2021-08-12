@@ -3,11 +3,11 @@
   <title>Recluse</title>
   
   <subtitle>Recluse</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://reclusew.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2021-08-11T15:58:54.279Z</updated>
-  <id>http://example.com/</id>
+  <link href="https://reclusew.github.io/"/>
+  <updated>2021-08-12T05:01:07.408Z</updated>
+  <id>https://reclusew.github.io/</id>
   
   <author>
     <name>Recluse</name>
@@ -17,18 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2021年最全搭建+美化+使用博客教程</title>
+    <link href="https://reclusew.github.io/2021/08/12/blog-setup/"/>
+    <id>https://reclusew.github.io/2021/08/12/blog-setup/</id>
+    <published>2021-08-12T04:08:44.000Z</published>
+    <updated>2021-08-12T05:01:07.408Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;博客搭建过程（采用hexo框架-部署到github）&quot;&gt;&lt;a href=&quot;#博客搭建过程（采用hexo框架-部署到github）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="综合" scheme="https://reclusew.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+    
+    
+    <category term="hexo" scheme="https://reclusew.github.io/tags/hexo/"/>
+    
+    <category term="matery" scheme="https://reclusew.github.io/tags/matery/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hello world</title>
-    <link href="http://example.com/2021/08/11/hello-world/"/>
-    <id>http://example.com/2021/08/11/hello-world/</id>
+    <link href="https://reclusew.github.io/2021/08/11/hello-world/"/>
+    <id>https://reclusew.github.io/2021/08/11/hello-world/</id>
     <published>2021-08-11T15:57:04.000Z</published>
-    <updated>2021-08-11T15:58:54.279Z</updated>
+    <updated>2021-08-12T04:11:43.905Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;center&gt;大家好，这是我的第一篇博客，欢迎访问，后期会更新很多文章！&lt;/center&gt;
+    <summary type="html">&lt;center&gt;大家好，这是我的第一篇博客，本人是前端小萌新一枚，后期会把自己学习路上遇到的问题和笔记写到我的博客里面，欢迎大家访问交流，共同进步！&lt;/center&gt;
 
 &lt;p&gt;&lt;img</summary>
         
@@ -36,10 +63,10 @@
     
     
     
-    <category term="生活" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://reclusew.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://reclusew.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
