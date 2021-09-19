@@ -6,7 +6,7 @@
   <link href="https://reclusew.github.io/atom.xml" rel="self"/>
   
   <link href="https://reclusew.github.io/"/>
-  <updated>2021-08-12T08:17:55.402Z</updated>
+  <updated>2021-09-19T15:32:58.879Z</updated>
   <id>https://reclusew.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vuex详解</title>
+    <link href="https://reclusew.github.io/2021/09/19/vuex-xiang-jie/"/>
+    <id>https://reclusew.github.io/2021/09/19/vuex-xiang-jie/</id>
+    <published>2021-09-19T15:07:54.000Z</published>
+    <updated>2021-09-19T15:32:58.879Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;em&gt;&lt;strong&gt;一、 Vuex简介&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;官方解释：&lt;/strong&gt;Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用 集中式存储管理</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Vue" scheme="https://reclusew.github.io/tags/Vue/"/>
+    
+    <category term="Vuex" scheme="https://reclusew.github.io/tags/Vuex/"/>
+    
+  </entry>
   
   <entry>
     <title>2021年最全搭建+美化+使用博客教程</title>

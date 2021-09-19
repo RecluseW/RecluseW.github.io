@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hello world, Recluse">
+    <meta name="keywords" content="Vuex详解, Recluse">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hello world | Recluse</title>
+    <title>Vuex详解 | Recluse</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -291,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hello world</h1>
+                    <h1 class="description center-align post-title">Vuex详解</h1>
                 </div>
             </div>
         </div>
@@ -412,23 +412,18 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                                <span class="chip bg-color">生活</span>
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
+                            </a>
+                        
+                            <a href="/tags/Vuex/">
+                                <span class="chip bg-color">Vuex</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
-                                生活
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -437,28 +432,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-11
+                    2021-09-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-12
+                    2021-09-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    60
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    10 分
                 </div>
                 
 
@@ -481,9 +476,208 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <center>大家好，这是我的第一篇博客，本人是前端小萌新一枚，后期会把自己学习路上遇到的问题和笔记写到我的博客里面，欢迎大家访问交流，共同进步！</center>
-
-<p><img src="2.jpeg"></p>
+                <p><em><strong>一、 Vuex简介</strong></em></p>
+<p><strong>官方解释：</strong>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用 集中式存储管理 应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。</p>
+<p>Vuex 也集成到 Vue 的官方调试工具 devtools extension，提供了诸如零配置的 time-travel 调试、状态快照导入导出等高级调试功能。</p>
+<p><em><strong>二、Vuex的基本使用</strong></em></p>
+<p><strong>2.1 Vuex五个核心概念总概</strong> </p>
+<ul>
+<li><strong>state：</strong>Vuex的基本数据，用来存储变量</li>
+<li><strong>getters：</strong>从基本数据(state)派生的数据，相当于state的计算属性</li>
+<li><strong>mutation：</strong>提交更新数据的方法(里面是写方法的)，必须是同步的(如果需要异步使用action)。每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数，提交载荷作为第二个参数。</li>
+<li><strong>actions：</strong>和mutation的功能大致相同，不同之处在于 ==》1. Action 提交的是 mutation，而不是直接变更状态。 2. Action 可以包含任意异步操作。</li>
+<li><strong>modules：</strong>模块化Vuex，可以让每一个模块拥有自己的state、mutation、action、getters,使得结构非常清晰，方便管理。</li>
+</ul>
+<p>注意：    一般在项目的src文件夹中新建store文件夹，Vuex相关代码都写到里面</p>
+<p><strong>案例：</strong></p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\bff2e37bc4cb49e88be6f3e192c59ef6\clipboard.png" alt="img"></p>
+<p><strong>2.2 state单一状态树</strong></p>
+<p><strong>2.2.1 单一状态树解释：</strong></p>
+<ul>
+<li>用一个对象（主干）就包含了全部的（分支）应用层级状态</li>
+<li>每个应用将仅仅包含一个 store 实例对象（主干）</li>
+</ul>
+<p>单一状态树让我们能够直接地定位任一特定的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。</p>
+<p><strong>2.2.2 如何在 Vue 组件中展示状态呢？</strong></p>
+<p>从store实例中读取状态最简单的方法就是在计算属性中返回某个状态。</p>
+<p>示例：</p>
+<p>例如我们在state中定义一个count属性，给它赋一个值为10，store.js文件内容如下所示：</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\f382cdf2328e411e923b33d8a37fdd1d\clipboard.png" alt="img"></p>
+<p>然后创建一个 Counter组件，在组件中返回count，内容如下所示：</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\8144e253d39249e1a8f743d7d60a68c1\clipboard.png" alt="img"></p>
+<p>每当 store.state.count 变化的时候，都会重新求取count属性，并刷新界面。</p>
+<p>这种模式依赖于全局的管理员 store，如果模块多了，那么每个模块或者页面只要用到了这个 state 里面的数据，都得把 store 引入进来，这样的操作确实有点难受。所以出现了下面这种解决办法。</p>
+<p>Vuex 通过store 选项，提供了一种机制将状态从根组件 “注入” 到每一个子组件中：</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\c245ccd292cb4b8aa7ed1fc8960f1061\clipboard.png" alt="img"></p>
+<p>在根实例中注册 store 选项，该 store 实例会注入到根组件下的所有子组件中，且子组件能通过this.$store 访问到，在组件中直接访问:this.$store.state.count</p>
+<p><strong>2.2.3 mapState辅助函数</strong></p>
+<p>当一个组件需要获取多个状态时候，将这些状态都声明为计算属性会有些重复和冗余。为了解决这个问题，我们可以使用 mapState 辅助函数帮助我们生成计算属性，让你少按几次键。</p>
+<p>示例：</p>
+<p>在使用mapState函数之前，需要先引入它：import { mapState } from ‘Vuex’</p>
+<p>引入后才可以开始使用，它两种用法，可以接受一个对象或接受一个数组。</p>
+<p>对象用法如下：</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\adebb1cfc851404f8c73d9013b70a08f\clipboard.png" alt="img"></p>
+<p>数组用法如下所示：</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\204348f2a833492abd7c5f719fab9754\clipboard.png" alt="img"></p>
+<p><strong>2.3 getters</strong></p>
+<p><strong>2.3.1 前言</strong></p>
+<p>Vuex 允许我们在 store 中定义“getter”（可以认为是 store 的计算属性）。就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。</p>
+<p>Getter 接受 state 作为其第一个参数：</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\bcdce58a16db4b3faa968a6f4a58d4f8\clipboard.png" alt="img"></p>
+<p><strong>2.3.2</strong> <strong>通过属性访问</strong></p>
+<p>Getter会暴露为 store.getters 对象，你可以以属性的形式访问这些值：</p>
+<p><strong>store.getters.doneTodos //  [{ id: 1, text: ‘…’, done: true }]</strong></p>
+<p>Getter 也可以接受其他 getter 作为第二个参数：</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\aca9f674df0442789efd6b76d90b598e\clipboard.png" alt="img"></p>
+<p>我们可以很容易地在任何组件中使用它：</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\83c3b081dee543958d83a47de1ec9001\clipboard.png" alt="img"></p>
+<p>注意，getter 在通过属性访问时是作为 Vue 的响应式系统的一部分缓存其中的。</p>
+<p><strong>2.3.3</strong> <strong>通过方法访问</strong></p>
+<p>你也可以通过让 getter 返回一个函数，来实现给 getter 传参。在你对 store 里的数组进行查询时非常有用。</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\a068eeb5a2334fb29b4d1c61447af9ff\clipboard.png" alt="img"></p>
+<p>注意，getter 在通过方法访问时，每次都会去进行调用，而不会缓存结果。</p>
+<p><strong>2.3.4 案例：获取学生年龄大于20的个数</strong></p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\696bdd0965014c459c06e77df19e9c80\clipboard.png" alt="img"></p>
+<p>注意：getters默认是不能传递参数的, 如果希望传递参数, 那么只能让getters本身返回另一个函数.</p>
+<p><strong>2.4 mutations</strong></p>
+<p><strong>2.4.1</strong> <strong>Mutation状态更新</strong></p>
+<p>Vuex的store状态的更新唯一方式：提交Mutation</p>
+<p>Mutation主要包括两部分：</p>
+<ul>
+<li>字符串的事件类型（type）</li>
+<li>一个回调函数（handler）,该回调函数的第一个参数就是state</li>
+</ul>
+<p>mutation的定义方式：</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\54b53dac918e4b65b22cf6efb78f829f\clipboard.png" alt="img"></p>
+<p>通过mutation更新：</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\324509f57dc7403f9f30813eee5826d5\clipboard.png" alt="img"></p>
+<p><strong>2.4.2 Mutation传递参数</strong></p>
+<p>在通过mutation更新数据的时候, 有可能我们希望携带一些额外的参数</p>
+<ul>
+<li>参数被称为是mutation的载荷(Payload)</li>
+</ul>
+<p>Mutation中的代码:</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\af24222084f84334a4778855066c1a31\clipboard.png" alt="img"></p>
+<p>但是如果参数不是一个呢?</p>
+<ul>
+<li>比如我们有很多参数需要传递.</li>
+<li>这个时候, 我们通常会以对象的形式传递, 也就是payload是一个对象.</li>
+<li>这个时候可以再从对象中取出相关的信息.</li>
+</ul>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\e343f266f00047af9e654453b937904b\clipboard.png" alt="img"></p>
+<p><strong>案例：</strong>使+5按钮和+10按钮起效果，点击添加学生就给stu信息添加到数组中</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\c6ab028dc552420e91e4dafcb204f89a\clipboard.png" alt="img"></p>
+<p><strong>2.4.3 Mutation另一种提交风格</strong></p>
+<p>上面的通过commit进行提交是一种普通的方式,Vue还提供了另外一种风格, 它是一个包含type属性的对象</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\4245b04660d943ce92641b0dbb3704c4\clipboard.png" alt="img"></p>
+<p>Mutation中的处理方式是将整个commit的对象作为payload使用, 所以代码没有改变, 依然如下:</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\ee93bfc3a9414f2bb21c738304335776\clipboard.png" alt="img"></p>
+<p><strong>2.4.4</strong> <strong>Mutation响应规则</strong></p>
+<p>Vuex的store中的state是响应式的, 当state中的数据发生改变时, Vue组件会自动更新.</p>
+<ul>
+<li>state里面的内容属性都会被添加到响应式系统中，当系统监听到属性发生了变化，就会通知所有界面中用到该属性的地方进行更新，页面就会刷新</li>
+</ul>
+<p>这就要求我们必须遵守一些Vuex对应的规则：</p>
+<ul>
+<li><p>提前在store中初始化好所需的属性.</p>
+</li>
+<li><p>当给state中的对象添加新属性时, 使用下面的方式:</p>
+</li>
+<li><ul>
+<li>方式一: 使用Vue.set(obj, ‘newProp’, 123)</li>
+<li>方式二: 用新对象给旧对象重新赋值</li>
+</ul>
+</li>
+</ul>
+<p>我们来看一个例子:</p>
+<ul>
+<li>当我们点击更新信息时, 界面并没有发生对应改变.</li>
+</ul>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\5daffd8c10c44add8842e9d73e73ccbe\clipboard.png" alt="img"></p>
+<p>如何才能让它改变呢?</p>
+<ul>
+<li>查看下面代码的方式一和方式二</li>
+<li>都可以让state中的属性是响应式的.</li>
+</ul>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\5bdda95f8f3f4631bde061c4740d2346\clipboard.png" alt="img"></p>
+<p><strong>2.4.5 使用****Mutation常量类型</strong></p>
+<p>我们来考虑下面的问题:</p>
+<ul>
+<li>在mutation中, 我们定义了很多事件类型(也就是其中的方法名称).</li>
+<li>当我们的项目增大时, Vuex管理的状态越来越多, 需要更新状态的情况越来越多, 那么意味着Mutation中的方法越来越多.</li>
+<li>方法过多, 使用者需要花费大量的经历去记住这些方法, 甚至是多个文件间来回切换, 查看方法名称, 甚至如果不是复制的时候, 可能还会出现写错的情况.</li>
+</ul>
+<p>如何避免上述的问题呢?</p>
+<ul>
+<li>在各种Flux实现中, 一种很常见的方案就是使用常量替代Mutation事件的类型.</li>
+<li>我们可以将这些常量放在一个单独的文件中, 方便管理以及让整个app所有的事件类型一目了然.</li>
+</ul>
+<p>具体怎么做呢?</p>
+<ul>
+<li>我们可以创建一个文件: mutation-types.js, 并且在其中定义我们的常量.</li>
+<li>定义常量时, 我们可以使用ES2015中的风格, 使用一个常量来作为函数的名称.</li>
+</ul>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\24055e88beee4d9fbe311f2c6b90b0af\clipboard.png" alt="img"></p>
+<p><strong>2.4.6</strong> <strong>Mutation同步函数</strong></p>
+<p>通常情况下, Vuex要求我们<strong>Mutation中的方法必须是同步方法.</strong></p>
+<ul>
+<li>主要的原因是当我们使用devtools时, 可以devtools可以帮助我们捕捉mutation的快照.</li>
+<li>但是如果是异步操作, 那么devtools将不能很好的追踪这个操作什么时候会被完成.</li>
+</ul>
+<p>比如我们之前的代码, 当执行更新时, devtools中会有如下信息: 图1</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\0e131f0cf4e64f04aecd204107f894d5\clipboard.png" alt="img"></p>
+<p>但是, 如果Vuex中的代码, 我们使用了异步函数(定时器): 图2</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\d839d330051043969492d3b1dd3f5c96\clipboard.png" alt="img"></p>
+<p>你会发现state中的info数据一直没有被改变, 因为他无法追踪到，所以通常情况下, 不要再mutation中进行异步的操作</p>
+<p><strong>2.5 actions</strong></p>
+<p><strong>2.5.1</strong> <strong>Action的基本定义</strong></p>
+<p>我们强调, 不要再Mutation中进行异步操作.</p>
+<ul>
+<li>但是某些情况, 我们确实希望在Vuex中进行一些异步操作, 比如网络请求, 必然是异步的. 这个时候怎么处理呢?</li>
+<li><strong>Action类似于Mutation, 但是是用来代替Mutation进行异步操作的.</strong></li>
+<li>Action 函数接受一个与 store 实例具有相同方法和属性的 context 对象，因此你可以调用context.commit提交一个 mutation，或者通过context.state和context.getters来获取 state 和 getters。</li>
+</ul>
+<p>让我们来注册一个简单的 action：</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\6fda6988bd2647e8b3950729f79d854a\clipboard.png" alt="img"></p>
+<p>context是什么?</p>
+<ul>
+<li>context是和store对象具有相同方法和属性的对象.</li>
+<li>也就是说, 我们可以通过context去进行commit相关的操作, 也可以获取context.state等.</li>
+<li>但是注意, 这里它们并不是同一个对象, 为什么呢? 我们后面学习Modules的时候, 再具体说.</li>
+</ul>
+<p>这样的代码是否多此一举呢?</p>
+<ul>
+<li>我们定义了actions, 然后又在actions中去进行commit, 这不是脱裤放屁吗?</li>
+<li>事实上并不是这样, 如果在Vuex中有异步操作, 那么我们就可以在actions中完成了.</li>
+</ul>
+<p><strong>2.5.2</strong> <strong>Action的分发</strong></p>
+<ul>
+<li>在Vue组件中, 如果我们调用action中的方法, 那么就需要使用<strong>store.dispatch()</strong> 方法</li>
+<li>同样的, 也是支持传递<strong>payload</strong></li>
+</ul>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\dfdaa997271e436998dc6fc140b085c7\clipboard.png" alt="img"></p>
+<p><strong>2.5.3</strong> <strong>Action返回的Promise</strong></p>
+<p>前面我们学习ES6语法的时候说过, Promise经常用于异步操作.</p>
+<p>在Action中, 我们可以将异步操作放在一个Promise中, 并且在成功或者失败后, 调用对应的resolve或reject.</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\f19d21badda344dc972ae384f399410e\clipboard.png" alt="img"></p>
+<p><strong>2.6 modules</strong></p>
+<p>Module是模块的意思, 为什么在Vuex中我们要使用模块呢?</p>
+<ul>
+<li>Vue使用单一状态树,那么也意味着很多状态都会交给Vuex来管理.</li>
+<li>当应用变得非常复杂时,store对象就有可能变得相当臃肿.</li>
+<li>为了解决这个问题, Vuex允许我们将store分割成模块(Module), 而每个模块拥有自己的state、mutation、action、getters等</li>
+</ul>
+<p>上面的代码中, 我们已经有了整体的组织结构, 下面我们来看看具体的局部模块中的代码如何书写？</p>
+<ul>
+<li>我们在moduleA中添加state、mutations、getters</li>
+<li>mutation和getters接收的第一个参数是局部状态对象</li>
+</ul>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\66c9d3a45a514ba49bba1a4e41979fb3\clipboard.png" alt="img"></p>
+<p><strong>补充：</strong></p>
+<p>modules里面action的写法: 局部状态通过 context.state 暴露出来，根节点状态则为context.rootState</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\4d12c3e641a94458a85d43d7f0eff652\clipboard.png" alt="img"></p>
+<p>modules里如果getters中也需要使用全局的状态, 可以接受更多的参数:</p>
+<p><img src="E:\xpzsData\有道云笔记\qq822AB174BE6AD381EF607D9917B0FA99\0f82200471d445b592ad9ffcb6c770de\clipboard.png" alt="img"></p>
 
                 
             </div>
@@ -510,7 +704,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://reclusew.github.io/2021/08/11/hello-world/">https://reclusew.github.io/2021/08/11/hello-world/</a>
+                    <a href="https://reclusew.github.io/2021/09/19/vuex-xiang-jie/">https://reclusew.github.io/2021/09/19/vuex-xiang-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -548,8 +742,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                                    <span class="chip bg-color">生活</span>
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
+                                </a>
+                            
+                                <a href="/tags/Vuex/">
+                                    <span class="chip bg-color">Vuex</span>
                                 </a>
                             
                         </div>
@@ -987,9 +1185,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/09/19/vuex-xiang-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Vuex详解">
+                        
+                        <span class="card-title">Vuex详解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Recluse
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                    <a href="/tags/Vuex/">
+                        <span class="chip bg-color">Vuex</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/08/12/blog-setup/">
                     <div class="card-image">
@@ -1007,9 +1256,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1031,56 +1280,6 @@
                     
                     <a href="/tags/matery/">
                         <span class="chip bg-color">matery</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/08/11/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="hello world">
-                        
-                        <span class="card-title">hello world</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-11
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
-                                    生活
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                        <span class="chip bg-color">生活</span>
                     </a>
                     
                 </div>
