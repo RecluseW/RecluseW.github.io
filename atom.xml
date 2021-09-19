@@ -6,7 +6,7 @@
   <link href="https://reclusew.github.io/atom.xml" rel="self"/>
   
   <link href="https://reclusew.github.io/"/>
-  <updated>2021-09-19T15:32:58.879Z</updated>
+  <updated>2021-09-19T16:10:17.312Z</updated>
   <id>https://reclusew.github.io/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="https://reclusew.github.io/2021/09/19/vuex-xiang-jie/"/>
     <id>https://reclusew.github.io/2021/09/19/vuex-xiang-jie/</id>
     <published>2021-09-19T15:07:54.000Z</published>
-    <updated>2021-09-19T15:32:58.879Z</updated>
+    <updated>2021-09-19T16:10:17.312Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;em&gt;&lt;strong&gt;一、 Vuex简介&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;官方解释：&lt;/strong&gt;Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用 集中式存储管理</summary>
+    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;一、-Vuex简介&quot;&gt;&lt;a href=&quot;#一、-Vuex简介&quot; class=&quot;headerlink&quot; title=&quot;一、 Vuex简介&quot;&gt;&lt;/a&gt;&lt;strong&gt;一、 Vuex简介&lt;/strong&gt;&lt;/h2&gt;&lt;h3</summary>
         
       
     
